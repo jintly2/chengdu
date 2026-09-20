@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成都五日 · 一家三口国庆路书</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B35'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='serif'>🐼</text></svg>">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@400;600;700;800&display=swap">
+<style>
+:root {
+  --primary: #FF6B35;
+  --primary-dark: #E55525;
+  --primary-light: #FFF0E8;
+  --dark: #1A1A2E;
+  --bg: #FAF8F5;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-2: #6B6B80;
+  --text-3: #A0A0B0;
+  --border: #ECEAE5;
+  --gold: #D4A843;
+  --radius: 16px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:72px; }
+body {
+  font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+
+/* ===== STICKY NAV ===== */
+.nav-bar {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-bar::-webkit-scrollbar { display:none; }
+.nav-brand {
+  font-weight: 900; font-size: 16px;
+  color: var(--primary);
+  white-space: nowrap;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+.nav-tab {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.nav-tab:hover { background: var(--primary-light); color: var(--primary); }
+.nav-tab.active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+  margin-top: 60px;
+  position: relative;
+  height: 62vh;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset:0;
+  width:100%; height:100%; object-fit: cover;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(to top, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.2) 60%, rgba(26,26,46,0.1) 100%);
+}
+.hero-content {
+  position: relative; z-index:2;
+  padding: 0 48px 48px;
+  color: #fff;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--primary);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section { padding: 64px 0; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.section-label::before {
+  content:'';
+  width: 20px; height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.section-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 32px;
+}
+
+/* ===== STATS ===== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 3;
+}
+.stat-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+}
+.stat-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-2);
+  margin-top: 4px;
+}
+
+/* ===== TABLE ===== */
+.table-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th {
+  background: var(--dark);
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 16px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 13px;
+}
+td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr.highlight td {
+  background: var(--primary-light);
+  font-weight: 600;
+}
+.tag-rec {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+.price { color: var(--primary); font-weight: 700; }
+
+/* ===== DAY CARDS ===== */
+.day-section {
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+}
+.day-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.day-badge {
+  background: var(--dark);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.day-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+.day-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+.day-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 240px;
+}
+.day-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.day-list {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.day-list h4 {
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.timeline-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-time {
+  flex-shrink: 0;
+  width: 60px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 13px;
+  padding-top: 1px;
+}
+.timeline-text { color: var(--text); }
+
+/* ===== TOUR CARDS ===== */
+.tour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.tour-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+}
+.tour-card h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+.tour-price {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 8px 0 16px;
+}
+.tour-card ul {
+  list-style: none;
+  font-size: 14px;
+  color: var(--text-2);
+}
+.tour-card ul li {
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+.tour-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 12px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* ===== BUDGET ===== */
+.budget-card {
+  background: var(--dark);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 15px;
+}
+.budget-item:last-of-type { border-bottom: none; }
+.budget-item .amt { font-weight: 700; color: var(--primary); }
+.budget-total {
+  text-align: center;
+  padding: 28px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+.budget-total .label {
+  font-size: 11px;
+  opacity: 0.6;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.budget-total .num {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+/* ===== TIPS ===== */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.tip {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+.tip strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.tip p {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); margin-top: -20px; }
+  .day-grid { grid-template-columns: 1fr; }
+  .day-photo { height: 200px; }
+  .tour-grid { grid-template-columns: 1fr; }
+  .budget-card { grid-template-columns: 1fr; padding: 28px; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .hero-content { padding: 0 24px 32px; }
+  section { padding: 40px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-bar" id="navbar">
+  <span class="nav-brand">成都五日</span>
+  <a class="nav-tab active" href="#overview" data-target="overview">总览</a>
+  <a class="nav-tab" href="#flights" data-target="flights">机票</a>
+  <a class="nav-tab" href="#day1" data-target="day1">Day1</a>
+  <a class="nav-tab" href="#day2" data-target="day2">Day2</a>
+  <a class="nav-tab" href="#day3" data-target="day3">Day3</a>
+  <a class="nav-tab" href="#day4" data-target="day4">Day4</a>
+  <a class="nav-tab" href="#day5" data-target="day5">Day5</a>
+  <a class="nav-tab" href="#hotel" data-target="hotel">酒店</a>
+  <a class="nav-tab" href="#tours" data-target="tours">一日游</a>
+  <a class="nav-tab" href="#budget" data-target="budget">预算</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="overview">
+  <img class="hero-bg" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NpVQbOszdorx9lxfIPtceetvnke" alt="大熊猫">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">国庆 · 一家三口</div>
+    <h1>成都五日路书</h1>
+    <p>10月3日下午出发 — 10月7日傍晚回家 · 熊猫 / 三国 / 都江堰 / 三星堆</p>
+  </div>
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="container">
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">天行程</div></div>
+    <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">晚住宿</div></div>
+    <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">人出行</div></div>
+    <div class="stat-card"><div class="stat-num">~1.2万</div><div class="stat-label">总预算</div></div>
+  </div>
+</div>
+
+<!-- ===== FLIGHTS ===== -->
+<section id="flights" class="container">
+  <div class="section-label">Flights</div>
+  <h2 class="section-title">三个时间段下午机票对比</h2>
+  <p class="section-desc">最终选方案3（10/3–10/7）：往返最省，且8号才上班。</p>
+  <div class="table-card">
+    <table>
+      <colgroup><col style="width:18%"><col style="width:27%"><col style="width:27%"><col style="width:28%"></colgroup>
+      <thead><tr><th>对比项</th><th>方案1 10/1–10/5</th><th>方案2 10/2–10/6</th><th>方案3 10/3–10/7</th></tr></thead>
+      <tbody>
+        <tr><td>去程</td><td>MU2865 17:20→19:50</td><td>8L9666 12:55→17:45 经停</td><td class="price">MU2865 17:20→19:50</td></tr>
+        <tr><td>去程/人</td><td>1,135 元</td><td>747 元</td><td class="price">530 元</td></tr>
+        <tr><td>返程</td><td>MU3329 15:45→18:10</td><td>3U6913 15:45→18:10</td><td class="price">MU2998 17:30→19:45</td></tr>
+        <tr><td>返程/人</td><td>1,250 元</td><td>1,600 元</td><td class="price">1,580 元</td></tr>
+        <tr class="highlight"><td>3人往返</td><td>7,155 元</td><td>7,041 元</td><td>6,330 元 <span class="tag-rec">推荐</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px;color:var(--text-3);margin-top:12px;">携程 2026-09-19 查询 · 经济舱/人 · 国庆价格浮动以预订时为准</p>
+</section>
+
+<!-- ===== DAY 1 ===== -->
+<section id="day1" class="day-section container">
+  <div class="day-header">
+    <span class="day-badge">Day 1 · 10.3 周六</span>
+    <span class="day-title">傍晚到成都，一顿火锅接风</span>
+  </div>
+  <div class="day-grid">
+    <div class="day-photo">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/DxfTbu5F8ovgakxUDgdcWuBdndf" alt="成都火锅">
+    </div>
+    <div class="day-list">
+      <h4>行程安排</h4>
+      <div class="timeline-item"><span class="timeline-time">17:20</span><span class="timeline-text">禄口T2起飞 → 19:50 天府T2落地</span></div>
+      <div class="timeline-item"><span class="timeline-time">20:30</span><span class="timeline-text">地铁18号线 → 春熙路酒店 check-in</span></div>
+      <div class="timeline-item"><span class="timeline-time">21:30</span><span class="timeline-text">酒店附近火锅接风，鸳鸯锅微辣</span></div>
+      <div class="timeline-item"><span class="timeline-time">23:00</span><span class="timeline-text">回酒店休息</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAY 2 ===== -->
+<section id="day2" class="day-section container">
+  <div class="day-header">
+    <span class="day-badge">Day 2 · 10.4 周日</span>
+    <span class="day-title">宽窄巷子喝茶，太古里逛街</span>
+  </div>
+  <div class="day-grid">
+    <div class="day-photo">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O1WJbgZCyo6GfWx2V2gcYpp7nvf" alt="宽窄巷子">
+    </div>
+    <div class="day-list">
+      <h4>行程安排</h4>
+      <div class="timeline-item"><span class="timeline-time">09:00</span><span class="timeline-text">宽窄巷子 · 免费，青砖四合院漫步</span></div>
+      <div class="timeline-item"><span class="timeline-time">12:00</span><span class="timeline-text">奎星楼街午餐 · 本地馆子扎堆</span></div>
+      <div class="timeline-item"><span class="timeline-time">14:00</span><span class="timeline-text">人民公园鹤鸣茶社 · 盖碗茶15–30元</span></div>
+      <div class="timeline-item"><span class="timeline-time">17:30</span><span class="timeline-text">春熙路太古里 · 逛街 + 晚餐</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAY 3 ===== -->
+<section id="day3" class="day-section container">
+  <div class="day-header">
+    <span class="day-badge">Day 3 · 10.5 周一</span>
+    <span class="day-title">都江堰一日游，两千年水利奇迹</span>
+  </div>
+  <div class="day-grid">
+    <div class="day-photo">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Y0HUbPMkIox1K6x01u4cmUTwnUb" alt="都江堰">
+    </div>
+    <div class="day-list">
+      <h4>行程安排</h4>
+      <div class="timeline-item"><span class="timeline-time">08:00</span><span class="timeline-text">市区上车，三环内接</span></div>
+      <div class="timeline-item"><span class="timeline-time">10:00</span><span class="timeline-text">鱼嘴 → 飞沙堰 → 宝瓶口（导游讲解3h）</span></div>
+      <div class="timeline-item"><span class="timeline-time">14:00</span><span class="timeline-text">南桥 / 仰天窝广场打卡</span></div>
+      <div class="timeline-item"><span class="timeline-time">17:00</span><span class="timeline-text">返回成都，晚上自由活动</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAY 4 ===== -->
+<section id="day4" class="day-section container">
+  <div class="day-header">
+    <span class="day-badge">Day 4 · 10.6 周二</span>
+    <span class="day-title">早上看熊猫，下午探秘三星堆</span>
+  </div>
+  <div class="day-grid">
+    <div class="day-photo">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/MSAubsr86obKZ4xX39WcOy3sn2b" alt="三星堆">
+    </div>
+    <div class="day-list">
+      <h4>行程安排</h4>
+      <div class="timeline-item"><span class="timeline-time">07:00</span><span class="timeline-text">市区接 → 08:00 熊猫基地（2h）</span></div>
+      <div class="timeline-item"><span class="timeline-time">10:30</span><span class="timeline-text">出发广汉 → 12:00 三星堆（午餐+3h讲解）</span></div>
+      <div class="timeline-item"><span class="timeline-time">16:00</span><span class="timeline-text">返程 → 17:30 到成都</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAY 5 ===== -->
+<section id="day5" class="day-section container">
+  <div class="day-header">
+    <span class="day-badge">Day 5 · 10.7 周三</span>
+    <span class="day-title">自然醒，慢悠悠飞回家</span>
+  </div>
+  <div class="day-grid">
+    <div class="day-photo">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/JYkObkeigoUaBFx3kTBc8GWQnod" alt="熊猫">
+    </div>
+    <div class="day-list">
+      <h4>行程安排</h4>
+      <div class="timeline-item"><span class="timeline-time">09:00</span><span class="timeline-text">自然醒，酒店早餐</span></div>
+      <div class="timeline-item"><span class="timeline-time">11:00</span><span class="timeline-text">退房寄存行李，附近逛买伴手礼</span></div>
+      <div class="timeline-item"><span class="timeline-time">13:30</span><span class="timeline-text">出发天府机场（地铁18号线约1.5h）</span></div>
+      <div class="timeline-item"><span class="timeline-time">17:30</span><span class="timeline-text">MU2998起飞 → 19:45 到禄口</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOTEL ===== -->
+<section id="hotel" class="container">
+  <div class="section-label">Hotel</div>
+  <h2 class="section-title">五家春熙路亚朵对比</h2>
+  <p class="section-desc">推荐②春熙路IFS亚朵：性价比最高，2025年新装修。</p>
+  <div class="table-card">
+    <table>
+      <colgroup><col style="width:24%"><col style="width:14%"><col style="width:12%"><col style="width:14%"><col style="width:18%"><col style="width:18%"></colgroup>
+      <thead><tr><th>亚朵门店</th><th>距春熙路</th><th>装修</th><th>双床面积</th><th>国庆/晚</th><th>4晚总价</th></tr></thead>
+      <tbody>
+        <tr><td>①太古里IFS亚朵S</td><td>步行3分钟</td><td>2025新</td><td>28–32㎡</td><td>900–1200</td><td>3600–4800</td></tr>
+        <tr class="highlight"><td>②春熙路IFS亚朵</td><td>步行8–10分钟</td><td>2025装修</td><td>25–30㎡</td><td>700–900</td><td>2800–3600</td></tr>
+        <tr><td>③太古里步行街亚朵</td><td>步行2分钟</td><td>—</td><td>25–30㎡</td><td>700–900</td><td>2800–3600</td></tr>
+        <tr><td>④天府广场地铁站亚朵</td><td>步行5分钟</td><td>—</td><td>25–30㎡</td><td>650–800</td><td>2600–3200</td></tr>
+        <tr><td>⑤春熙亚朵轻居</td><td>步行5分钟</td><td>—</td><td>20–25㎡偏小</td><td>600–750</td><td>2400–3000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== TOURS ===== -->
+<section id="tours" class="container">
+  <div class="section-label">Day Tours</div>
+  <h2 class="section-title">两段一日游产品</h2>
+  <p class="section-desc">都江堰和三星堆都需要讲解，报纯玩团最省心。</p>
+  <div class="tour-grid">
+    <div class="tour-card">
+      <h3>Day3 · 都江堰一日游</h3>
+      <div class="tour-price">约 525 元/3人</div>
+      <ul>
+        <li>纯玩大巴团 210–280元/人</li>
+        <li>精品小团（6人）300–440元/人</li>
+        <li>含门票+往返+讲解+保险</li>
+        <li>三环内上门接</li>
+        <li>学生半价约105元/人</li>
+      </ul>
+    </div>
+    <div class="tour-card">
+      <h3>Day4 · 熊猫+三星堆连线团</h3>
+      <div class="tour-price">约 650 元/3人</div>
+      <ul>
+        <li>标准大巴团 约260元/人</li>
+        <li>精品小团（8人）450–470元/人</li>
+        <li>含熊猫55+三星堆72+午餐+往返+导游</li>
+        <li>早7点出发，17:30回成都</li>
+        <li>学生半价约130元/人</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUDGET ===== -->
+<section id="budget" class="container">
+  <div class="section-label">Budget</div>
+  <h2 class="section-title">五天四晚总预算</h2>
+  <div class="budget-card">
+    <div>
+      <div class="budget-item"><span>往返机票（3人下午航班）</span><span class="amt">6,330 元</span></div>
+      <div class="budget-item"><span>酒店4晚（春熙路IFS亚朵）</span><span class="amt">2,800–3,600 元</span></div>
+      <div class="budget-item"><span>两段一日游（含学生半价）</span><span class="amt">1,175 元</span></div>
+      <div class="budget-item"><span>餐饮+市内交通+门票</span><span class="amt">1,500–2,000 元</span></div>
+    </div>
+    <div class="budget-total">
+      <div class="label">ESTIMATED</div>
+      <div class="num">¥11.8K–13K</div>
+      <p style="font-size:12px;opacity:0.6;margin-top:8px;">一家三口五天四晚<br>不含购物</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIPS ===== -->
+<section class="container">
+  <div class="section-label">Tips</div>
+  <h2 class="section-title">出行小贴士</h2>
+  <div class="tips-grid">
+    <div class="tip"><strong>带外套</strong><p>成都10月早晚凉，温差大</p></div>
+    <div class="tip"><strong>带伞</strong><p>秋季多阵雨，折叠伞随身带</p></div>
+    <div class="tip"><strong>火锅微辣起步</strong><p>不能吃辣别逞强，鸳鸯锅微辣足够</p></div>
+    <div class="tip"><strong>熊猫早去</strong><p>中午熊猫就睡觉了，越早越活跃</p></div>
+    <div class="tip"><strong>机票早订</strong><p>国庆机票越等越贵，看到就下手</p></div>
+    <div class="tip"><strong>带学生证</strong><p>所有景点和一日游学生半价</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>成都 · 10.3–10.7 · 2026 · 祝旅途愉快</p>
+</footer>
+
+<script>
+// Scroll-spy: highlight active nav tab
+const tabs = document.querySelectorAll('.nav-tab');
+const sections = {};
+tabs.forEach(t => { sections[t.dataset.target] = document.getElementById(t.dataset.target); });
+
+function onScroll() {
+  const y = window.scrollY + 80;
+  let current = 'overview';
+  for (const id in sections) {
+    if (sections[id].offsetTop <= y) current = id;
+  }
+  tabs.forEach(t => {
+    t.classList.toggle('active', t.dataset.target === current);
+  });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
+
+</body>
+</html>
